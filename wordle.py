@@ -8,6 +8,7 @@ def makeAGuess(user_guess):
   hint = ""
 
   # TASK D: Build a loop that loops from 0 to the length of word
+  
   for i in range(len(word)): 
 
     # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
