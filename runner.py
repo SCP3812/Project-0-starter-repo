@@ -1,5 +1,5 @@
 from character import Character
-from scene import Scene
+from location import location
 from item import Item
 from player import Player
 from puzzle import playPuzzle
@@ -11,7 +11,6 @@ player_name =  input("What is your name? ")
 player = Player(player_name)
 therapist = Character("Dr. Soychild", "Your very worst nightmare, the WOKE Therapist, Dr. Soychild. He hates every signular fibre of your being. His entire life has been dedicated to keeping you weak and demoralized, so that the Establishment may remain strong and powerful.", [], {"I don't belong in here.":"Yes, you do belong in here. Your mother has asked you to remain here for the rest of your gamer life. All respawns included."}, "your gamer life")
 gamer_life = Item("your gamer life", "This is the only thing you have left that hasn't been tainted by the Matrix. It is your lifeblood, your will-to-power, your gamer life; to give it away would be like selling your soul to Woke Satan.", 5000)
-scene1 = Scene("You awake in a bleak white lounging room. Walking corpses of men stand all around you. The windows to the outside world, meatspace, have all been shuttered. Welcome to your new personal gamer Hell.", therapist, gamer_life)
+scene1 = location("Therapy", "You awake in a bleak white lounging room. Walking corpses of men stand all around you. The windows to the outside world, meatspace, have all been shuttered. Welcome to your new personal gamer Hell.", [], [])
 
-choice = 0
-while choice != "E":
+
