@@ -1,6 +1,5 @@
 class Character:
-    def __init__(self, id, name, description, inventory, dialogue, combat, looking_for, stats):
-        self.id = id
+    def __init__(self, name, description, inventory, dialogue, combat, looking_for, stats):
         self.name = name
         self.description = description
         self.inventory = inventory

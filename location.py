@@ -1,6 +1,5 @@
 class Location:
-    def __init__(self, id, name, description, items, characters, exits)
-        self.id = id
+    def __init__(self, name, description, items, characters, exits)
         self.name = name
         self.description = description
         self.items = items

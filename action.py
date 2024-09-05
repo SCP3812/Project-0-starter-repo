@@ -1,5 +1,4 @@
 class Action: 
-    def __init__(self, id, name, result)
-        self.id = id
+    def __init__(self, name, result)
         self.name = name 
         self.result = result
