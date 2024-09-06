@@ -1,5 +1,5 @@
 class Character:
-    def __init__(self, name, description, inventory, dialogue, combat, looking_for, stats):
+    def __init__(self, name, description, inventory, dialogue, looking_for):
         self.name = name
         self.description = description
         self.inventory = inventory
@@ -15,14 +15,4 @@ class Character:
 
     def remove_item(self, item):
         self.items.remove(item)
-
-    def get_combat(self):
-        return self.combat
-
-    def get_stat(self, stat):
-        return self.stats[stat]
-
-    def set_stat(self, stat, value):
-        self.stats[stat] = value
-
     
