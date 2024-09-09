@@ -5,7 +5,6 @@ class Character:
         self.inventory = inventory
         self.dialogue = dialogue
         self.looking_for = looking_for
-        self.stats = stats
         
     def get_requests(self):
         return self.dialogue
