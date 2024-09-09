@@ -1,3 +1,4 @@
+import json
 from location import Location
 from item import Item
 from character import Character
