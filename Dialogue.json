@@ -1,10 +1,10 @@
 {
-    "dialogue": [
+    "soychild":
         {
             "I don't belong in here.":"Yes, you do belong in here. Your mother has asked you to remain here for the rest of your gamer life. All respawns included."
         },
+    "reception":
         {
             "Where is my mother? ":"I'm sorry, but your mother will visit another time~","I dont belong here.":"I'm sorry, puppy~ but you're a special puppy, one who's not allowed to leave, ever~ or at least until you take your pills~","Fine. Just give me the pills.":"Okay, puppy~ here you go~"
         }
-    ]
 }
