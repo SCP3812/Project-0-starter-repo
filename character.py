@@ -1,10 +1,9 @@
 class Character:
-    def __init__(self, name, description, inventory, dialogue, looking_for):
+    def __init__(self, name, description, inventory, dialogue):
         self.name = name
         self.description = description
         self.inventory = inventory
         self.dialogue = dialogue
-        self.looking_for = looking_for
         
     def get_requests(self):
         return self.dialogue

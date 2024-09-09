@@ -6,14 +6,14 @@ class Location:
         self.characters = characters
         self.exits = exits
 
-        def add_item(self, item):
+    def add_item(self, item):
             self.items.append(item)
 
-        def remove_item(self, item):
+    def remove_item(self, item):
             self.items.remove(item)
 
-        def add_character(self, character):
+    def add_character(self, character):
             self.characters.append(character)
 
-        def remove_character(self, character):
+    def remove_character(self, character):
             self.characters.remove(character)
