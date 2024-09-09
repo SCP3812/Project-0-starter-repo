@@ -3,7 +3,6 @@ from location import Location
 from item import Item
 from character import Character
 from player import Player
-from puzzle import playPuzzle
 
 with open ('Dialogue.json', 'r') as file:
     dialogue = json.load(file)
@@ -22,6 +21,9 @@ player = Player(player_name, scene1)
 normal_pills = Item("normal pills", "These pills will make you normal. These pills will make you conform. These pills WILL make you live in a society, and you WILL BE HAPPY.", 1000, [])
 receptionist = Character("Receptionist", "It's a devil wearing the skin of a woman wearing a blindingly white labcoat. She stares into your soul with eyes of pure sadism and wanton contempt. Her smile is slightly too wide for her face. She speaks in a condescending, infantilizing tone. She does not have your best intentions in mind.", [], dialogue["reception"])
 scene2 = Location("Pharmacy", "This room is a room of darkness, where liberty and freedom go to die. The gamer's worst nightmare is here - being nerfed - taking normal pills. The workers stand in their red, white, and blue scrubs, staring you down with garish, soulless grins. It is a sterile white, with a counter where the receptionist stands.", [], [], ['S','W'])
+print(player.location.description)
+
+
 
 
 
