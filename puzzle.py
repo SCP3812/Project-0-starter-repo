@@ -9,7 +9,7 @@ class Hole:
         self.shape = shape
 
 def generate_puzzle():
-    shapes = ["square", "circle", "triangle", "star"]
+    shapes = ["square", "circle", "triangle", "star", "archway", "rectangle", "semicircle"]
     holes = [Hole(shape) for shape in shapes]
     blocks = [Block(shape) for shape in shapes]
     random.shuffle(blocks)
@@ -29,7 +29,7 @@ def playPuzzle(holes, blocks):
         if choice < 0 or choice >= len(holes):
             print("Invalid choice. Try again.")
             return False
-        elif hole[choice].shape == block.shape:
+        elif holes[choice].shape == block.shape and holes[choice].shape != "square":
             print("The block doesn't quite fit. You might have to retry this one...")
             int(input("Which hole do you want to put the block in? ")) - 1
         elif holes[choice].shape == "square":
