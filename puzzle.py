@@ -42,7 +42,7 @@ def playPuzzle(holes, blocks):
     return True
 
 # Example usage
-holes, blocks = generate_puzzle()
-playPuzzle(holes, blocks)
+#holes, blocks = generate_puzzle()
+#playPuzzle(holes, blocks)
 
 #code entirely generate by Claude-3.5
