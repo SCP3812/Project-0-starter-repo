@@ -6,5 +6,9 @@
     "reception":
         {
             "Where is my mother? ":"I'm sorry, but your mother will visit another time~","I dont belong here.":"I'm sorry, puppy~ but you're a special puppy, one who's not allowed to leave, ever~ or at least until you take your pills~","Fine. Just give me the pills.":"Okay, puppy~ here you go~"
+        },
+    "gamer":
+        {
+            "Why are you in here?":"They discovered me being too based. They had me arrested, and they delcared me insane. The rest is lore.","Can you help me leave?":"There is one way; an ancient puzzle, supposedly only solvable by the most redpilled of gamers. I can't help you with that one, I'm afraid.","Any advice?":"Don't listen to Soychild or the Receptionist.","What's up with Soychild?":"He's a piece of work. He used to be normal, until something just... broke inside of him. Also, don't give him your gamer life. If you do, you're screwed.","What's up with the Receptionist?":"I don't really know. One day she just... appeared. Never left since. Just... don't take the pills."
         }
 }
