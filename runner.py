@@ -35,8 +35,8 @@ elif actions == '2':
     print(f"In this room you see {' , '.join([str(item.name) for item in player.location.items])}.")
 elif actions == '3':
     input_direction = input("Which direction?\nL\nR\nF\nB\n")
-    player.move_location(input_direction, locales)
-
+    player.move_location(player.location, input_direction, locales)
+    print(player.location.description)
 
 
 
