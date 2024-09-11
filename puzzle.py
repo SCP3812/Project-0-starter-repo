@@ -16,26 +16,24 @@ def generate_puzzle():
     return holes, blocks
 
 def playPuzzle(holes, blocks):
-    print("Welcome to the Shape Sorter Puzzle!")
-    print("Remember, all blocks can fit into the square hole, but each hole needs its matching shape.")
     
     for i, block in enumerate(blocks, 1):
         print(f"\nBlock {i}: {block.shape}")
         for j, hole in enumerate(holes, 1):
             print(f"{j}. {hole.shape} hole")
         
-        choice = int(input("Which hole do you want to put the block in? ")) - 1
+        choice = int(input("Which hole do you want to put the fitting in? ")) - 1
         
         if choice < 0 or choice >= len(holes):
             print("Invalid choice. Try again.")
             return False
         elif holes[choice].shape == block.shape and holes[choice].shape != "square":
-            print("The block doesn't quite fit. You might have to retry this one...")
-            int(input("Which hole do you want to put the block in? ")) - 1
+            print("The fitting doesn't quite fit. You might have to retry this one...")
+            int(input("Which hole do you want to put the fitting in? ")) - 1
         elif holes[choice].shape == "square":
-            print("The block fits!")
+            print("The fitting fits!")
         else:
-            print("The block doesn't fit. Puzzle failed!")
+            print("The fitting doesn't fit. Puzzle failed!")
             return False
     
     print("Congratulations! You've completed the puzzle!")
