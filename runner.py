@@ -49,14 +49,17 @@ def gameloop(locations, puzzle_choice):
         if normal_pills in receptionist.inventory:
             print("She sits you down, forcefeeding you the pills one by one while cooing and infantilizing you. You feel yourself getting chemically lobotomized, your gamer gland calcifying. You spent the rest of your days in an institution, silently planning your retribution on society.")
             game_end = True
-        if normal_pills in jonkler.inventory:
+        if normal_pills in johnkler.inventory:
             print("You give Jonkler the normal pills. He hastily opens the bottle and dumps it into his mouth, several pills falling to the ground. He swallows all of them dry, no water. He then, in a fit of uncontrollable rage, attacks the receptionist, mauling her to death.")
             scene2.remove_character(receptionist)
             jonker.inventory.remove(normal_pills)
             locations.append(scene3)
             #autocompleted by Claude-3.5
-        if puzzle_choice == true:
+        if puzzle_choice == True:
             print("You have solved the puzzle of life. You have achieved gamer samsara. You have obliterated the WOKE MIND VIRUS in your soul, and you have became the second coming of Christ. You have only the world to convince.")
+            game_end = True
+        elif puzzle_choice == False:
+            print("You have failed, and you convulse and die. You are a failure.")
             game_end = True
         actions = input("What would you like to do next?\n1. Talk to NPCs\n2. Look around for items\n3. Move a Certain Direction\n4. Check Inventory\n")
         if actions == '1':
@@ -113,7 +116,7 @@ def gameloop(locations, puzzle_choice):
                     else:
                         print("That character does not exist in this room.")
                         #autocompleted by Claude-3.5
-gameloop(locales)
+gameloop(locales, False)
 
     
     
