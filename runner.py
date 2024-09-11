@@ -28,7 +28,7 @@ scene3 = Location("Backroom", "A crampt, dark, dank room you've managed to get i
 scene3.add_item(puzzlebox)
 locales = [scene1, scene2]
 
-def gameloop(locations):
+def gameloop(locations, puzzle_choice):
     print("Welcome to MonkeyTime PlayFun Time Monkey Game by Games Incorporated")
     player_name =  input("What is your name? ")
     #autocompleted by Claude-3.5
@@ -55,6 +55,9 @@ def gameloop(locations):
             jonker.inventory.remove(normal_pills)
             locations.append(scene3)
             #autocompleted by Claude-3.5
+        if puzzle_choice == true:
+            print("You have solved the puzzle of life. You have achieved gamer samsara. You have obliterated the WOKE MIND VIRUS in your soul, and you have became the second coming of Christ. You have only the world to convince.")
+            game_end = True
         actions = input("What would you like to do next?\n1. Talk to NPCs\n2. Look around for items\n3. Move a Certain Direction\n4. Check Inventory\n")
         if actions == '1':
             input_npc = input(f"which NPC? \n{'\n'.join([str(char.name) for char in player.location.characters])}\n")
@@ -100,7 +103,6 @@ def gameloop(locations):
                         print("You get the sense that... you must... solve the puzzle. Put the brass fittings into the holes.")
                         holes, fittings = generate_puzzle()
                         puzzle_choice = playPuzzle(holes, blocks)
-                        
                 elif give in item_choice:
                     for char in player.location.characters:
                         if char.name in item_choice:
