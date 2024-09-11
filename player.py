@@ -22,10 +22,11 @@ class Player:
                 input_dir = "B"
             elif input_dir == "B":
                 input_dir = "F"
-
+        #inverts input direction to exit direction, makes checking location exits easier
             for room in available_rooms:
                     if input_dir in room.exits:
                         self.location = room
+        #checks if input direction is in the closest rooms exit list, and if it is, moves player to that room
         else:
             print("You cannot move anywhere at this current moment.")
             return

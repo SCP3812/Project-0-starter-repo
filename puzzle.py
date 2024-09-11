@@ -11,7 +11,9 @@ class Hole:
 def generate_puzzle():
     shapes = ["square", "circle", "triangle", "star", "archway", "rectangle", "semicircle"]
     holes = [Hole(shape) for shape in shapes]
+    #creates hole object for each shape in shapes
     blocks = [Block(shape) for shape in shapes]
+    #creates block object for each shape in shapes
     random.shuffle(blocks)
     return holes, blocks
 
@@ -21,17 +23,22 @@ def playPuzzle(holes, blocks):
         print(f"\nBlock {i}: {block.shape}")
         for j, hole in enumerate(holes, 1):
             print(f"{j}. {hole.shape} hole")
+        #prints out each hole name and number, and the current block   
         
         choice = int(input("Which hole do you want to put the fitting in? ")) - 1
+        #promots user for which hole to put the block into
         
         if choice < 0 or choice >= len(holes):
             print("Invalid choice. Try again.")
+            #if choice is less than 0 or grather than the amount of holes it doesn't work
             return False
         elif holes[choice].shape == block.shape and holes[choice].shape != "square":
             print("The fitting doesn't quite fit. You might have to retry this one...")
+            #checks if fitting is put into its correspondingly shaped hole
             int(input("Which hole do you want to put the fitting in? ")) - 1
         elif holes[choice].shape == "square":
             print("The fitting fits!")
+            #checks if fitting is put into square hole, it then fits
         else:
             print("The fitting doesn't fit. Puzzle failed!")
             return False
