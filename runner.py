@@ -23,6 +23,7 @@ receptionist = Character("Receptionist", "It's a devil wearing the skin of a wom
 scene2 = Location("Pharmacy", "This room is a room of darkness, where liberty and freedom go to die. The gamer's worst nightmare is here - being nerfed - taking normal pills. The workers stand in their red, white, and blue scrubs, staring you down with garish, soulless grins. It is a sterile white, with a counter where the receptionist stands.", [], [], ['B','L'])
 scene2.add_item(normal_pills)
 scene2.add_character(receptionist)
+scene2.add_character(johnkler)
 puzzlebox = Item("puzzlebox", "A small brass cube with differently-shaped holes all over its surface, and a set of various shaped brass fittings to match. Something within it calls to you, as if it can provide freedom.", 900)
 scene3 = Location("Backroom", "A crampt, dark, dank room you've managed to get into somehow. It's cold in here. You've gotten the sense that this room was once used as a storage closet... for something.", [], [], ['R'])
 scene3.add_item(puzzlebox)
@@ -38,6 +39,8 @@ def gameloop(locations, puzzle_choice):
     #line autocompleted by Claude-3.5
     print(player.location.description)
 
+    puzzle_choice = "nothingburger"
+
     game_end = False
     #autocompleted by Claude-3.5
 
@@ -52,7 +55,7 @@ def gameloop(locations, puzzle_choice):
         if normal_pills in johnkler.inventory:
             print("You give Jonkler the normal pills. He hastily opens the bottle and dumps it into his mouth, several pills falling to the ground. He swallows all of them dry, no water. He then, in a fit of uncontrollable rage, attacks the receptionist, mauling her to death.")
             scene2.remove_character(receptionist)
-            jonker.inventory.remove(normal_pills)
+            johnkler.inventory.remove(normal_pills)
             locations.append(scene3)
             #autocompleted by Claude-3.5
         if puzzle_choice == True:
@@ -61,6 +64,8 @@ def gameloop(locations, puzzle_choice):
         elif puzzle_choice == False:
             print("You have failed, and you convulse and die. You are a failure.")
             game_end = True
+        else:
+            pass
         actions = input("What would you like to do next?\n1. Talk to NPCs\n2. Look around for items\n3. Move a Certain Direction\n4. Check Inventory\n")
         if actions == '1':
             input_npc = input(f"which NPC? \n{'\n'.join([str(char.name) for char in player.location.characters])}\n")
@@ -105,7 +110,7 @@ def gameloop(locations, puzzle_choice):
                     if item == puzzlebox:
                         print("You get the sense that... you must... solve the puzzle. Put the brass fittings into the holes.")
                         holes, fittings = generate_puzzle()
-                        puzzle_choice = playPuzzle(holes, blocks)
+                        puzzle_choice = playPuzzle(holes, fittings)
                 elif give in item_choice:
                     for char in player.location.characters:
                         if char.name in item_choice:
@@ -116,7 +121,7 @@ def gameloop(locations, puzzle_choice):
                     else:
                         print("That character does not exist in this room.")
                         #autocompleted by Claude-3.5
-gameloop(locales, False)
+gameloop(locales, 0)
 
     
     
