@@ -17,6 +17,7 @@ scene1 = Location("Therapy", "You awake in a bleak white lounging room. Walking 
 scene1.add_item(gamer_life)
 scene1.add_character(therapist)
 scene1.add_character(gamer)
+johnkler = Character("Johnkler", "A man cowers in the corner, holding himself in the fetal position. On his face he wears a cruel farce of clown makeup, a smile painted over his scowling lips. His silently laughs to himself.", [], dialogue["jonkler"])
 normal_pills = Item("normal pills", "These pills will make you normal. These pills will make you conform. These pills WILL make you live in a society, and you WILL BE HAPPY.", 1000)
 receptionist = Character("Receptionist", "It's a devil wearing the skin of a woman wearing a blindingly white labcoat. She stares into your soul with eyes of pure sadism and wanton contempt. Her smile is slightly too wide for her face. She speaks in a condescending, infantilizing tone. She does not have your best intentions in mind.", [], dialogue["reception"])
 scene2 = Location("Pharmacy", "This room is a room of darkness, where liberty and freedom go to die. The gamer's worst nightmare is here - being nerfed - taking normal pills. The workers stand in their red, white, and blue scrubs, staring you down with garish, soulless grins. It is a sterile white, with a counter where the receptionist stands.", [], [], ['B','L'])
@@ -38,6 +39,18 @@ def gameloop(locations):
     #autocompleted by Claude-3.5
 
     while game_end == False:
+        if gamer_life in therapist.inventory:
+            print("You thank Dr. Soychild for saving you from your video game addiction. Your mother welcomes you back into her home with open arms. God is in his heaven. Everything is normal on Earth.")
+            break
+            game_end = True
+        if normal_pills in receptionist.inventory:
+            print("She sits you down, forcefeeding you the pills one by one while cooing and infantilizing you. You feel yourself getting chemically lobotomized, your gamer gland calcifying. You spent the rest of your days in an institution, silently planning your retribution on society.")
+            game_end = True
+        if normal_pills in jonkler.inventory:
+            print("You give Jonkler the normal pills. He hastily opens the bottle and dumps it into his mouth, several pills falling to the ground. He swallows all of them dry, no water. He then, in a fit of uncontrollable rage, attacks the receptionist, mauling her to death.")
+            scene2.remove_character(receptionist)
+            jonker.inventory.remove(normal_pills)
+            #autocompleted by Claude-3.5
         actions = input("What would you like to do next?\n1. Talk to NPCs\n2. Look around for items\n3. Move a Certain Direction\n4. Check Inventory\n")
         if actions == '1':
             input_npc = input(f"which NPC? \n{'\n'.join([str(char.name) for char in player.location.characters])}\n")
@@ -89,11 +102,6 @@ def gameloop(locations):
                     else:
                         print("That character does not exist in this room.")
                         #autocompleted by Claude-3.5
-        elif gamer_life in therapist.inventory:
-            print("You thank Dr. Soychild for saving you from your video game addiction. Your mother welcomes you back into her home with open arms. God is in his heaven. Everything is normal on Earth.")
-            game_end = True
-                    
-
 gameloop(locales)
 
     
