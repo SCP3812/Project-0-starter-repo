@@ -11,13 +11,13 @@ with open ('Dialogue.json', 'r') as file:
 
 therapist = Character("Dr. Soychild", "Your very worst nightmare, the WOKE Therapist, Dr. Soychild. He hates every singular fibre of your being. His entire life has been dedicated to keeping you weak and demoralized, so that the Establishment may remain strong and powerful.", [], dialogue["soychild"])
 gamer = Character("Epic Gamer", "An epic gamer, one that has not yet fallen to the WOKE MIND VIRUS. He is like you in many ways, yet, he unfortunately has become infirmed.", [], dialogue["gamer"])
-gamer_life = Item("your gamer life", "This is the only thing you have left that hasn't been tainted by the Matrix. It is your lifeblood, your will-to-power, your gamer life; to give it away would be like selling your soul to Woke Satan.", 5000, [])
+gamer_life = Item("your gamer life", "This is the only thing you have left that hasn't been tainted by the Matrix. It is your lifeblood, your will-to-power, your gamer life; to give it away would be like selling your soul to Woke Satan.", 500)
 scene1 = Location("Therapy", "You awake in a bleak white lounging room. Walking corpses of men stand all around you. The windows to the outside world, meatspace, have all been shuttered. Welcome to your new personal gamer Hell.", [], [], ['F'])
 #L, R, F, B
 scene1.add_item(gamer_life)
 scene1.add_character(therapist)
 scene1.add_character(gamer)
-normal_pills = Item("normal pills", "These pills will make you normal. These pills will make you conform. These pills WILL make you live in a society, and you WILL BE HAPPY.", 1000, [])
+normal_pills = Item("normal pills", "These pills will make you normal. These pills will make you conform. These pills WILL make you live in a society, and you WILL BE HAPPY.", 1000)
 receptionist = Character("Receptionist", "It's a devil wearing the skin of a woman wearing a blindingly white labcoat. She stares into your soul with eyes of pure sadism and wanton contempt. Her smile is slightly too wide for her face. She speaks in a condescending, infantilizing tone. She does not have your best intentions in mind.", [], dialogue["reception"])
 scene2 = Location("Pharmacy", "This room is a room of darkness, where liberty and freedom go to die. The gamer's worst nightmare is here - being nerfed - taking normal pills. The workers stand in their red, white, and blue scrubs, staring you down with garish, soulless grins. It is a sterile white, with a counter where the receptionist stands.", [], [], ['B','L'])
 scene2.add_item(normal_pills)
@@ -44,6 +44,7 @@ def gameloop(locations):
             if input_npc in [char.name for char in player.location.characters]:
                 for char in player.location.characters:
                     if char.name == input_npc:
+                        print(char.description)
                         input_dialogue = input(f"What do you want to say?\n{'\n'.join([str(line) for line in char.dialogue.keys()])}\n")
                         print(f"{char.name}: {char.get_dialogue_response(char.dialogue, input_dialogue)}")
             else:
@@ -87,7 +88,10 @@ def gameloop(locations):
                             break
                     else:
                         print("That character does not exist in this room.")
-                    #autocompleted by Claude-3.5
+                        #autocompleted by Claude-3.5
+        elif gamer_life in therapist.inventory:
+            print("You thank Dr. Soychild for saving you from your video game addiction. Your mother welcomes you back into her home with open arms. God is in his heaven. Everything is normal on Earth.")
+            game_end = True
                     
 
 gameloop(locales)
