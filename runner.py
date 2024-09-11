@@ -23,6 +23,9 @@ receptionist = Character("Receptionist", "It's a devil wearing the skin of a wom
 scene2 = Location("Pharmacy", "This room is a room of darkness, where liberty and freedom go to die. The gamer's worst nightmare is here - being nerfed - taking normal pills. The workers stand in their red, white, and blue scrubs, staring you down with garish, soulless grins. It is a sterile white, with a counter where the receptionist stands.", [], [], ['B','L'])
 scene2.add_item(normal_pills)
 scene2.add_character(receptionist)
+puzzlebox = Item("puzzlebox", "A small brass cube with differently-shaped holes all over its surface, and a set of various shaped brass fittings to match. Something within it calls to you, as if it can provide freedom.", 900)
+scene3 = Location("Backroom", "A crampt, dark, dank room you've managed to get into somehow. It's cold in here. You've gotten the sense that this room was once used as a storage closet... for something.", [], [], ['R'])
+scene3.add_item(puzzlebox)
 locales = [scene1, scene2]
 
 def gameloop(locations):
